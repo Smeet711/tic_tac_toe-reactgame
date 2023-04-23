@@ -4,7 +4,7 @@ import Board from "./Components/Board";
 import Modal from "./Components/Modal";
 import ScoreBoard from "./Components/ScoreBoard";
 
-function App() {
+const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xPlaying, setXPlaying] = useState(true);
   const [xScore, setXScore] = useState(0);
@@ -65,7 +65,7 @@ function App() {
 
   const checkWinner = (board) => {
     for (let i = 0; i < WIN_CONDITIONS.length; i++) {
-      const [x, y, z] = WIN_CONDITIONS[i];
+      const [x, y, z] = WIN_CONDITIONS[i]; // destructing
 
       // Iterate through win conditions and check if either player satisfies them
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
